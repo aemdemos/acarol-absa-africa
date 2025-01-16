@@ -1,0 +1,87 @@
+
+.aicolumns-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.aicolumns {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.aicolumns > div {
+  display: flex;
+  flex-direction: row; /* Ensure the image and text are side by side */
+}
+
+.aicolumns-img-col {
+  flex: 1;
+}
+
+.aicolumns-img-col img {
+  width: 100%;
+  height: auto;
+}
+
+.aicolumns > div > div:nth-child(2) {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align text elements at the top */
+}
+
+.aicolumns > div > div:nth-child(2) h6 {
+  margin-top: 0;
+  position: relative;
+}
+
+.aicolumns > div > div:nth-child(2) h6::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  top: -10px; /* Adjust the position closer to the text */
+  left: 0;
+}
+
+.aicolumns > div > div:nth-child(2) h4 {
+  margin: 5px 0; /* Reduce the margin for a more compact look */
+}
+
+.aicolumns > div > div:nth-child(2) p {
+  margin: 5px 0; /* Reduce the margin for a more compact look */
+}
+
+.aicolumns > div > div:nth-child(2) .button-container {
+  margin-top: 10px; /* Adjust the margin-top for better positioning */
+}
+
+.aicolumns > div > div:nth-child(2) .button-container .button {
+  color: red;
+  text-decoration: none;
+  background-color: transparent; /* Remove blue button background */
+  border: none; /* Remove button border */
+}
+
+.aicolumns > div > div:nth-child(2) .button-container .button:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+  .aicolumns > div {
+    align-items: flex-start; /* Align items to the top */
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .aicolumns > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
