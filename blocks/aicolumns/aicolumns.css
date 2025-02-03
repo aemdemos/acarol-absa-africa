@@ -1,0 +1,60 @@
+
+.aicolumns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.aicolumns-2-cols > div {
+  display: flex;
+  width: 100%;
+  flex-direction: row; /* Align columns side by side */
+}
+
+.aicolumns-2-cols > div > div {
+  flex: 1;
+  padding: 10px;
+}
+
+.aicolumns-2-cols > div > div:first-child {
+  max-width: 100px; /* Adjust to make the social media column narrower */
+  display: flex;
+  flex-direction: column; /* Ensure elements are stacked vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the top */
+}
+
+.aicolumns-2-cols > div > div:first-child p,
+.aicolumns-2-cols > div > div:first-child picture,
+.aicolumns-2-cols > div > div:first-child a {
+  width: 100%; /* Ensure full width for each item */
+  text-align: center; /* Center text and images */
+  margin: 10px 0;
+}
+
+.aicolumns-2-cols > div > div:last-child {
+  flex: 3;
+  align-self: flex-start; /* Align the text column to the top */
+}
+
+/* Additional styling for social media icons and text */
+.aicolumns-2-cols picture {
+  display: block;
+  margin: 10px 0;
+}
+
+.aicolumns-2-cols a {
+  display: block;
+  margin: 10px 0;
+}
+
+@media (max-width: 899px) {
+  .aicolumns-2-cols > div {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  .aicolumns-2-cols > div > div:first-child {
+    align-items: flex-start; /* Align items to the start on smaller screens */
+    max-width: unset; /* Remove max-width restriction on smaller screens */
+  }
+}
