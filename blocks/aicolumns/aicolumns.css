@@ -71,7 +71,7 @@ p {
   display: inline;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .aicolumns > div {
     flex-direction: column;
   }
