@@ -1,0 +1,58 @@
+
+.aihero-wrapper {
+  max-width: unset;
+  padding: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url('./media_1d737d7e6a722c777539e3adb178f8827d7acebb1.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white; /* Ensure text is readable */
+}
+
+.aihero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  height: 100%; /* Ensure the block spans the full height */
+}
+
+.aihero > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%; /* Ensure the inner div spans the full height */
+}
+
+.aihero h1, .aihero h2 {
+  margin: 10px 0; /* Space out the headings */
+  color: white; /* Ensure text is readable */
+}
+
+.aihero h1 a {
+  color: white; /* Ensure text is readable */
+}
+
+.aihero picture {
+  display: none; /* Hide the picture element since the image is used as a background */
+}
+
+.aihero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 900px) {
+  .aihero {
+    padding: 40px 32px;
+  }
+}
