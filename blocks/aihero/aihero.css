@@ -51,7 +51,7 @@
   height: 100%;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .aihero {
     padding: 40px 32px;
   }
