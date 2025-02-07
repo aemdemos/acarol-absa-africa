@@ -1,0 +1,87 @@
+
+.aicolumns-wrapper > .aicolumns {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.aicolumns > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.aicolumns-img-col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.aicolumns > div > div:nth-child(2) {
+  flex: 1;
+  position: relative;
+  padding-left: 24px; /* Ensure proper spacing from the separator line */
+}
+
+.aicolumns > div > div:nth-child(2)::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  left: 0; /* Adjust position to the left */
+  top: 0;
+}
+
+.aicolumns img {
+  width: 100%;
+}
+
+h6 {
+  margin: 0;
+  color: #666;
+  font-weight: normal; /* Ensure the small heading is normal weight */
+}
+
+h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold; /* Ensure the title is bold */
+}
+
+p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button-container .button {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline;
+}
+
+@media (width <= 768px) {
+  .aicolumns > div {
+    flex-direction: column;
+  }
+
+  .aicolumns-img-col {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .aicolumns > div > div:nth-child(2)::before {
+    display: none;
+  }
+}
