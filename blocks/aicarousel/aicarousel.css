@@ -1,0 +1,76 @@
+
+.aicarousel-wrapper {
+  height: auto;
+}
+
+.aicarousel .aicarousel-navigation-buttons {
+  display: none;
+}
+
+/* Removing all navigation button related styles */
+.aicarousel .aicarousel-navigation-buttons button {
+  display: none;
+}
+
+.aicarousel .aicarousel-slide-indicators {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.aicarousel .aicarousel-slide-indicator button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.2s;
+}
+
+.aicarousel .aicarousel-slide-indicator button:disabled,
+.aicarousel .aicarousel-slide-indicator button:hover,
+.aicarousel .aicarousel-slide-indicator button:focus-visible {
+  background-color: #fff;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 16px 32px;
+  color: white;
+  background-color: rgb(227 28 39 / 90%); /* Red background color */
+  border-top-left-radius: 100px; /* More pronounced semicircle */
+  border-bottom-left-radius: 100px; /* More pronounced semicircle */
+  z-index: 1;
+  width: auto;
+  box-sizing: border-box; /* Ensure padding is included in the width/height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content h5 {
+  margin: 0;
+  padding-right: 16px;
+  font-size: 20px; /* Adjust font size for better readability */
+  line-height: 1.5; /* Improve line height for better readability */
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content p {
+  margin: 0;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content a {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 16px;
+  font-size: 20px; /* Adjust font size for better readability */
+  line-height: 1.5; /* Improve line height for better readability */
+}
