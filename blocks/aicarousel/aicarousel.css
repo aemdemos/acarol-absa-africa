@@ -60,7 +60,7 @@
   z-index: 1;
   padding: 30px; /* Increased padding for more space around text */
   color: white;
-  background-color: rgba(204, 0, 0, 0.85); /* Red background */
+  background-color: rgb(204 0 0 / 85%); /* Red background */
   position: absolute;
   bottom: 20px; /* Positioned at the bottom */
   right: 20px; /* Positioned at the right */
@@ -107,12 +107,13 @@
 .aicarousel .aicarousel-slide-indicator button:disabled,
 .aicarousel .aicarousel-slide-indicator button:hover,
 .aicarousel .aicarousel-slide-indicator button:focus-visible {
-  background-color: #ffffff; /* Active indicator color changed to white */
+  background-color: #fff; /* Active indicator color changed to white */
 }
 
 @media (width >= 600px) {
   .aicarousel .aicarousel-slide .aicarousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
+
     margin: 0;
   }
 
