@@ -1,0 +1,123 @@
+
+.aicarousel {
+  position: relative;
+}
+
+.aicarousel .aicarousel-slides-container {
+  position: relative;
+}
+
+.aicarousel .aicarousel-slides,
+.aicarousel .aicarousel-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aicarousel .aicarousel-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: hidden; /* Changed from scroll clip to hidden */
+}
+
+.aicarousel .aicarousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.aicarousel .aicarousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Adjusted height to show full image */
+}
+
+.aicarousel .aicarousel-slide:has(.aicarousel-slide-content[data-align='center']) {
+  align-items: center;
+}
+
+.aicarousel .aicarousel-slide:has(.aicarousel-slide-content[data-align='right']) {
+  align-items: flex-end;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-image picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content {
+  z-index: 1;
+  padding: 30px; /* Increased padding for more space around text */
+  color: white;
+  background-color: rgb(204 0 0 / 85%); /* Red background */
+  position: absolute;
+  bottom: 20px; /* Positioned at the bottom */
+  right: 20px; /* Positioned at the right */
+  border-top-left-radius: 30px; /* Increased border radius on the left side */
+  border-bottom-left-radius: 30px; /* Increased border radius on the left side */
+  width: auto;
+  max-width: 45%; /* Adjusted width to be more flexible */
+  margin: 0; /* Removed margin */
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content h5,
+.aicarousel .aicarousel-slide .aicarousel-slide-content p {
+  font-size: 1.75rem; /* Increased text size */
+  font-weight: bold; /* Ensure font is bold */
+}
+
+/* Hide navigation buttons */
+.aicarousel .aicarousel-navigation-buttons {
+  display: none;
+}
+
+/* Page Indicators */
+.aicarousel .aicarousel-slide-indicators {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.aicarousel .aicarousel-slide-indicator button {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #dadada; /* Inactive indicator color */
+  transition: background-color 0.2s;
+}
+
+.aicarousel .aicarousel-slide-indicator button:disabled,
+.aicarousel .aicarousel-slide-indicator button:hover,
+.aicarousel .aicarousel-slide-indicator button:focus-visible {
+  background-color: #fff; /* Active indicator color changed to white */
+}
+
+@media (width >= 600px) {
+  .aicarousel .aicarousel-slide .aicarousel-slide-content {
+    --slide-content-width: calc((100% - 184px) / 2);
+
+    margin: 0;
+  }
+
+  .aicarousel .aicarousel-slide .aicarousel-slide-content[data-align='justify'] {
+    --slide-content-width: auto;
+  }
+}
