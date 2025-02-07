@@ -18,7 +18,7 @@
   display: flex;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow: scroll clip;
+  overflow: hidden; /* Changed from scroll clip to hidden */
 }
 
 .aicarousel .aicarousel-slides::-webkit-scrollbar {
@@ -34,7 +34,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  min-height: min(50vw, calc(100dvh - var(--header-height)));
+  min-height: 100vh; /* Adjusted height to show full image */
 }
 
 .aicarousel .aicarousel-slide:has(.aicarousel-slide-content[data-align='center']) {
@@ -58,98 +58,62 @@
 
 .aicarousel .aicarousel-slide .aicarousel-slide-content {
   z-index: 1;
-  margin: 68px;
-  padding: 16px;
+  padding: 30px; /* Increased padding for more space around text */
   color: white;
-  background-color: rgba(19 19 19 / 75%);
-  position: relative;
-  width: var(--slide-content-width, auto);
+  background-color: rgba(204, 0, 0, 0.85); /* Red background */
+  position: absolute;
+  bottom: 20px; /* Positioned at the bottom */
+  right: 20px; /* Positioned at the right */
+  border-top-left-radius: 30px; /* Increased border radius on the left side */
+  border-bottom-left-radius: 30px; /* Increased border radius on the left side */
+  width: auto;
+  max-width: 45%; /* Adjusted width to be more flexible */
+  margin: 0; /* Removed margin */
 }
 
+.aicarousel .aicarousel-slide .aicarousel-slide-content h5,
+.aicarousel .aicarousel-slide .aicarousel-slide-content p {
+  font-size: 1.75rem; /* Increased text size */
+  font-weight: bold; /* Ensure font is bold */
+}
+
+/* Hide navigation buttons */
+.aicarousel .aicarousel-navigation-buttons {
+  display: none;
+}
+
+/* Page Indicators */
 .aicarousel .aicarousel-slide-indicators {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 12px;
-  padding: 12px;
-  background-color: var(--light-color);
-  line-height: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .aicarousel .aicarousel-slide-indicator button {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background-color: #dadada;
+  background-color: #dadada; /* Inactive indicator color */
   transition: background-color 0.2s;
 }
 
 .aicarousel .aicarousel-slide-indicator button:disabled,
 .aicarousel .aicarousel-slide-indicator button:hover,
 .aicarousel .aicarousel-slide-indicator button:focus-visible {
-  background-color: var(--text-color);
-}
-
-.aicarousel .aicarousel-navigation-buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-.aicarousel .aicarousel-navigation-buttons button {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  border-radius: 50%;
-  padding: 0;
-  background-color: rgba(19 19 19 / 25%);
-  transition: background-color 0.2s;
-}
-
-.aicarousel .aicarousel-navigation-buttons button:hover,
-.aicarousel .aicarousel-navigation-buttons button:focus-visible {
-  background-color: rgba(19 19 19 / 75%);
-}
-
-.aicarousel .aicarousel-navigation-buttons button::after {
-  display: block;
-  content: '';
-  border: 2px solid;
-  border-bottom: 0;
-  border-left: 0;
-  height: 12px;
-  width: 12px;
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 2px);
-  transform: translate(-50%, -50%) rotate(-135deg);
-}
-
-.aicarousel .aicarousel-navigation-buttons button.slide-next::after {
-  transform: translate(-50%, -50%) rotate(45deg);
-  left: calc(50% - 2px);
+  background-color: #ffffff; /* Active indicator color changed to white */
 }
 
 @media (width >= 600px) {
-  .aicarousel .aicarousel-navigation-buttons {
-    left: 24px;
-    right: 24px;
-  }
-
   .aicarousel .aicarousel-slide .aicarousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
-
-    margin: 92px;
+    margin: 0;
   }
 
   .aicarousel .aicarousel-slide .aicarousel-slide-content[data-align='justify'] {
