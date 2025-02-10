@@ -1,0 +1,120 @@
+
+.aicarousel {
+  position: relative;
+}
+
+.aicarousel .aicarousel-slides-container {
+  position: relative;
+}
+
+.aicarousel .aicarousel-slides,
+.aicarousel .aicarousel-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aicarousel .aicarousel-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: hidden;
+}
+
+.aicarousel .aicarousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.aicarousel .aicarousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align content */
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: auto;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-image picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.aicarousel .aicarousel-slide .aicarousel-slide-content {
+  z-index: 1;
+  padding: 20px 40px; /* Adjust padding for better spacing */
+  color: white;
+  background-color: rgba(19, 19, 19, 0.35); /* Lighten the background overlay */
+  position: relative;
+  width: 85%; /* Adjust width to span more of the carousel slide */
+  max-width: 1100px; /* Ensure it doesn't span too much on very wide screens */
+  margin: 0 auto; /* Center the content */
+  text-align: center; /* Center text */
+}
+
+.aicarousel .aicarousel-slide-content h5,
+.aicarousel .aicarousel-slide-content p {
+  font-size: 1.6em; /* Increase font size */
+  line-height: 1.5; /* Adjust line height for better readability */
+  color: white; /* Ensure text color is white */
+}
+
+.aicarousel .aicarousel-slide-content a {
+  font-size: 1.3em; /* Increase font size for links */
+  color: #3b63fb; /* Ensure link color matches design */
+  text-decoration: underline;
+}
+
+.aicarousel .aicarousel-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px; /* Adjust gap for better spacing */
+  padding: 12px;
+  background-color: transparent; /* Make background transparent */
+  line-height: 0;
+  position: absolute;
+  right: 16px;
+  bottom: 50%; /* Center vertically */
+  transform: translateY(50%);
+  flex-direction: column; /* Position indicators vertically */
+}
+
+.aicarousel .aicarousel-slide-indicator button {
+  width: 14px; /* Increase indicator size */
+  height: 14px; /* Increase indicator size */
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background-color: grey;
+  transition: background-color 0.2s;
+}
+
+.aicarousel .aicarousel-slide-indicator button:disabled,
+.aicarousel .aicarousel-slide-indicator button:hover,
+.aicarousel .aicarousel-slide-indicator button:focus-visible {
+  background-color: white;
+}
+
+.aicarousel .aicarousel-navigation-buttons {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .aicarousel .aicarousel-slide .aicarousel-slide-content {
+    --slide-content-width: calc((100% - 184px) / 2);
+    margin: 92px;
+  }
+
+  .aicarousel .aicarousel-slide .aicarousel-slide-content[data-align='justify'] {
+    --slide-content-width: auto;
+  }
+}
