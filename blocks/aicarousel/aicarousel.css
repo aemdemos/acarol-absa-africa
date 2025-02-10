@@ -52,7 +52,7 @@
   z-index: 1;
   padding: 20px 40px; /* Adjust padding for better spacing */
   color: white;
-  background-color: rgba(19, 19, 19, 0.35); /* Lighten the background overlay */
+  background-color: rgb(19 19 19 / 35%); /* Lighten the background overlay */
   position: relative;
   width: 85%; /* Adjust width to span more of the carousel slide */
   max-width: 1100px; /* Ensure it doesn't span too much on very wide screens */
@@ -75,7 +75,7 @@
 
 .aicarousel .aicarousel-slide-indicators {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: center;
   gap: 8px 14px; /* Adjust gap for better spacing */
   padding: 12px;
@@ -84,8 +84,7 @@
   position: absolute;
   right: 16px;
   bottom: 50%; /* Center vertically */
-  transform: translateY(50%);
-  flex-direction: column; /* Position indicators vertically */
+  transform: translateY(50%); /* Position indicators vertically */
 }
 
 .aicarousel .aicarousel-slide-indicator button {
@@ -111,6 +110,7 @@
 @media (width >= 600px) {
   .aicarousel .aicarousel-slide .aicarousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
+
     margin: 92px;
   }
 
